@@ -15,7 +15,7 @@ padding: 20px;
 
 export const BtnCasa = styled.div`
 
-
+font-size: 0px;
 width: 80px;
 height: 80px;
 background-color: #1d272f;
@@ -25,6 +25,18 @@ box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.51);
 &:hover{
     background-color: #262d35;
     cursor: pointer;
+}
+
+&.bomb{
+    background-image: url(https://www.freeiconspng.com/thumbs/bomb-icon/bomb-icon-2.png);
+    background-size: 100%;
+    
+}
+
+&.safe{
+    background-image: url(https://www.seekpng.com/png/full/344-3447692_diamantes-desenho-png-diamond-symbol.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
 
 

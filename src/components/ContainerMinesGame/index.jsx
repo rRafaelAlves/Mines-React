@@ -3,9 +3,6 @@ import { Container, BtnCasa} from "./styles";
 
 export default function ContainerMinesGame(props){
 
-    
-
-    
      
 
 
@@ -13,7 +10,7 @@ export default function ContainerMinesGame(props){
     <Container> 
     {props.casas.map((itens, index)=>{
         return(
-            <BtnCasa onClick={(e)=>props.verificarBomba(e.target.innerHTML)} key={index}>{itens}</BtnCasa>
+            <BtnCasa  id={index+1}  onClick={(e)=>props.verificarBomba(e)} key={index}>{itens}</BtnCasa>
         )
     })}
     </Container>

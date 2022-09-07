@@ -1,14 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef, useLayoutEffect } from "react";
 import { Body } from "./styles";
 import ContainerMinesControler from "./components/ContainerMinesControler";
 import ContainerMinesGame from "./components/ContainerMinesGame";
 import './global.css'
+
 
 function App() {
 
   const [casas, setCasas] = useState([])
   const [casasSorteadas, setCasasSorteadas] = useState([])
   const [numeroMines, setNumeroMines] = useState(2)
+  const [isBomb, setIsBomb] = useState(false)
+
+ 
 
   const onChange = (e)=>{
       
@@ -40,16 +44,40 @@ function App() {
 
           
       }
+
+     
         
   }
 
 
 function verificarBomba(e){
-  console.log(casasSorteadas)
-  const found = casasSorteadas.find(element => element == e) 
+
+  const divBotaoClicado = e.target
+
+
+    e.target.setAttribute('className','bomb')
+
+
+
+
+  const casaClicada = parseFloat(e.target.innerHTML)
+
+ 
+  const found = casasSorteadas.find(element => element == casaClicada) 
+
+  
+  if(  casasSorteadas.includes(casaClicada)){
+    console.log('bomba')
+  }else{console.log('safe')}
+
+  
   
   if(found){
-    alert('BOMBA!')
+    
+    console.log(found )
+    setIsBomb(true)
+    
+    
   }
   
 
@@ -63,7 +91,7 @@ function verificarBomba(e){
     <Body>
 
 <ContainerMinesControler sortearMines={sortearMines} onChange={onChange} />
-<ContainerMinesGame casas={casas} casasSorteadas={casasSorteadas} sortearMines={sortearMines} verificarBomba={verificarBomba} />
+<ContainerMinesGame casas={casas} casasSorteadas={casasSorteadas} sortearMines={sortearMines} verificarBomba={verificarBomba} isBomb={isBomb}/>
 
 
 
