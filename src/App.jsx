@@ -68,6 +68,7 @@ function verificarBomba(e){
 
     e.target.style.backgroundImage = 'url(https://www.freeiconspng.com/thumbs/bomb-icon/bomb-icon-2.png)'
     e.target.style.backgroundSize = '100%';
+    setCasasSorteadas([])
     
 
   }else{

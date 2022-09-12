@@ -4,9 +4,6 @@ import { Container, SeletorMines, LabelMines, BotaoStartGame } from "./styles";
 
 export default function ContainerMinesControler(props){
 
-    const ContainerMobile = {
-        display: 'none'
-    };
 
     
     return(
