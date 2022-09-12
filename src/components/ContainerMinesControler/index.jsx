@@ -1,13 +1,17 @@
 import React, { useState } from "react";
 import { Container, SeletorMines, LabelMines, BotaoStartGame } from "./styles";
 
+
 export default function ContainerMinesControler(props){
 
-
+    const ContainerMobile = {
+        display: 'none'
+    };
 
     
     return(
-    <Container> 
+        
+    <Container className={`${props.gameStart? "displayMobile": ""}`}> 
 
         
         <LabelMines>Número de minas</LabelMines>
@@ -43,5 +47,6 @@ export default function ContainerMinesControler(props){
        
     
     </Container>
+    
     )
 }

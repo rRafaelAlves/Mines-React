@@ -5,11 +5,23 @@ display: flex;
 flex-direction: column;
 background-color: #1a242d;
 width: 220px;
-height: 700px;
+height: 400px;
 border-radius: 4px 0 0 4px;
 border-right: 1px solid #36404a;
 align-items: center;
 padding: 20px;
+
+
+&.displayMobile{
+   
+}
+
+@media (max-width: 768px) {
+   &.displayMobile{
+    display: none;
+   }
+  }
+
 `
 
 export const SeletorMines = styled.select`
